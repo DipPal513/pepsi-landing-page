@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>creative pepsi landing page</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section>
+      <header>
+        <nav>
+          <div class="logo">
+            <img src="images/logo.png" alt="" />
+          </div>
+          <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">what's new</a></li>
+            <li><a href="#">newsletter</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">
+        <div class="text-data">
+          <h2>that's what <br /><span>i like</span></h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+            incidunt eos accusantium cupiditate voluptates eligendi recusandae,
+            assumenda quam? Doloribus et nobis officiis incidunt fuga eum
+            dignissimos odit eaque necessitatibus harum ipsam similique officia
+            sed
+          </p>
+          <a href="#">view all products</a>
+        </div>
+        <div class="imgBox">
+          <img src="images/pepsi001.png" alt="" />
+        </div>
+      </div>
+      <ul class="thumb">
+        <li><img src="images/pepsi001.png" onclick="changeBgColor('#0062be')" alt="" /></li>
+        <li><img src="images/pepsi002.png" onclick="changeBgColor('#e60c2c')" alt="" /></li>
+        <li><img src="images/pepsi003.png" onclick="changeBgColor('#1e1e1e')" alt="" /></li>
+      </ul>
+      <ul class="sci">
+          <li><a href=""><img src="images/facebook.png" alt=""></a></li>
+          <li><a href=""><img src="images/twitter.png" alt=""></a></li>
+          <li><a href=""><img src="images/instagram.png" alt=""></a></li>
+      </ul>
+    </section>
+    <script>
+        const targetedImg = document.querySelector('.imgBox img');
+        const images = document.querySelectorAll('.thumb li img');
+        const section  = document.querySelector('section');
+        images.forEach((img) =>{
+            img.addEventListener('click',function(e){
+                const currSrc = e.target.src;
+                targetedImg.src = currSrc;
+            })
+        });
+
+        function changeBgColor(color){
+            section.style.backgroundColor = color;
+        }
+    </script>
+  </body>
+</html>
