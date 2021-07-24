@@ -4,16 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>creative pepsi landing page</title>
+    <title>Responsive | Pepsi-landing-page</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body onmousedown="return false" oncontextmenu="return false">
+  
+      
+
     <section>
       <header>
         <nav>
           <div class="logo">
             <img src="images/logo.png" alt="" />
           </div>
+          <label for="check" onclick="menuHandelar(this)">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <input type="checkbox" name="" id="check" />
           <ul class="navigation">
             <li><a href="#">Home</a></li>
             <li><a href="#">Product</a></li>
@@ -40,30 +50,63 @@
         </div>
       </div>
       <ul class="thumb">
-        <li><img src="images/pepsi001.png" onclick="changeBgColor('#0062be')" alt="" /></li>
-        <li><img src="images/pepsi002.png" onclick="changeBgColor('#e60c2c')" alt="" /></li>
-        <li><img src="images/pepsi003.png" onclick="changeBgColor('#1e1e1e')" alt="" /></li>
+        <li>
+          <img
+            src="images/pepsi001.png"
+            onclick="changeBgColor('#0062be')"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="images/pepsi002.png"
+            onclick="changeBgColor('#e60c2c')"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="images/pepsi003.png"
+            onclick="changeBgColor('#1e1e1e')"
+            alt=""
+          />
+        </li>
       </ul>
       <ul class="sci">
-          <li><a href=""><img src="images/facebook.png" alt=""></a></li>
-          <li><a href=""><img src="images/twitter.png" alt=""></a></li>
-          <li><a href=""><img src="images/instagram.png" alt=""></a></li>
+        <li>
+          <a href=""><img src="images/facebook.png" alt="" /></a>
+        </li>
+        <li>
+          <a href=""><img src="images/twitter.png" alt="" /></a>
+        </li>
+        <li>
+          <a href=""><img src="images/instagram.png" alt="" /></a>
+        </li>
       </ul>
     </section>
     <script>
-        const targetedImg = document.querySelector('.imgBox img');
-        const images = document.querySelectorAll('.thumb li img');
-        const section  = document.querySelector('section');
-        images.forEach((img) =>{
-            img.addEventListener('click',function(e){
-                const currSrc = e.target.src;
-                targetedImg.src = currSrc;
-            })
-        });
 
-        function changeBgColor(color){
-            section.style.backgroundColor = color;
-        }
+
+
+          const targetedImg = document.querySelector('.imgBox img');
+          const images = document.querySelectorAll('.thumb li img');
+          const section  = document.querySelector('section');
+          images.forEach((img) =>{
+              img.addEventListener('click',function(e){
+                  const currSrc = e.target.src;
+                  targetedImg.src = currSrc;
+              })
+          });
+
+          function changeBgColor(color){
+              section.style.backgroundColor = color;
+          }
+          function menuHandelar(e){
+            let ul = document.querySelector('nav ul');
+            ul.classList.toggle('active')
+            e.classList.toggle('active');
+          }
+       
     </script>
   </body>
 </html>
