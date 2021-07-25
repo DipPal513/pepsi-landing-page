@@ -160,6 +160,7 @@ label {
     height: 20px;
     display: none;
     position: relative;
+    cursor: pointer;
 }
 #check{
     display: none;
@@ -205,7 +206,7 @@ label > span{
         justify-content: center;
         background: #132a55;
         color: #fff;
-        width: 50%;
+        width: 80%;
         height: 100%;
         top: 0;
         left: -100%;
